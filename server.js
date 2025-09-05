@@ -25,10 +25,7 @@ app.use(cors({
     credentials : true
 }))
 
-mongoose.connect(`${process.env.MONGODB_URI}`,{
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-} )
+mongoose.connect("mongodb://localhost:27017/todoStore" )
 .then(()=>{
     console.log("connected db on" , process.env.MONGODB_URI);
     app.listen(process.env.PORT,()=>{
