@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 
 const createToken = (id)=>{
-    return jwt.sign({id} , process.env.SECRET_TOKEN_JWT , {expiresIn : "7d"})
+    return jwt.sign({id} , "SecretJson12345#$%webtokensnalgnljajsfiormfvnchajga2435@$@%awqrafa", {expiresIn : "7d"})
 }
 
 const signUp = async (req , res)=>{
