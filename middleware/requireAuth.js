@@ -8,7 +8,7 @@ const requireAuth = async (req , res , next)=>{
         
         if(!token) return res.status(401).json({succeed : false , mess:"Authrized token is required"})
             
-            const {id} = jwt.verify(token,"SecretJson12345#$%webtokensnalgnljajsfiormfvnchajga2435@$@%awqrafa");
+            const {id} = jwt.verify(token, process.env.SECRET_TOKEN_JWT);
             
             const user = await User.findOne({_id : id});
             

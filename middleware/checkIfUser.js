@@ -6,7 +6,7 @@ const checkIfuser = async (req , res)=>{
 
     if(!token) return res.json({succeed : false , mess:"There is no user"});
 
-    const {id} = jwt.verify(token , "SecretJson12345#$%webtokensnalgnljajsfiormfvnchajga2435@$@%awqrafa");
+    const {id} = jwt.verify(token , process.env.SECRET_TOKEN_JWT);
     const user =await User.findById({_id : id}).select("-password");
 
     if(user) return res.json({succeed : true , user});
