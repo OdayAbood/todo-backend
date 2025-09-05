@@ -25,7 +25,7 @@ app.use(cors({
     credentials : true
 }))
 
-mongoose.connect("mongodb+srv://odayabood233_db_user:qqRin89sZiw6lFDo@todostore.1fbke4k.mongodb.net/?retryWrites=true&w=majority&appName=todoStore")
+mongoose.connect(`${process.env.MONGODB_URI}`)
 .then(()=>{
     console.log("connected db on" , process.env.MONGODB_URI);
     app.listen(process.env.PORT,'0.0.0.0',()=>{
