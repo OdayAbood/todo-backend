@@ -30,11 +30,13 @@ mongoose.connect("mongodb+srv://odayabood233_db_user:qqRin89sZiw6lFDo@todostore.
     console.log("connected db on" , process.env.MONGODB_URI);
     app.listen(4000,'0.0.0.0',()=>{
         console.log("we are listening on port" , process.env.PORT);
+        console.log(process.env.SECRET_TOKEN_JWT)
     })
 })
 
 app.get("/api" , checkIfuser);
 
 app.use("/api/user" , userRoute);
+
 
 app.use("/api/task",taskRoute);
